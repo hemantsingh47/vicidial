@@ -13055,6 +13055,15 @@ textarea.form-control-lg {
   min-width: 1.5rem;
   max-width: 1.5rem;
 }
+.sidebar-wrapper img.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1rem;
+  max-height: 1rem;
+  width: 1rem;
+  max-height: 1rem;
+}
 .sidebar-wrapper .sidebar-menu > .nav-item > .nav-link {
   color: var(--lte-sidebar-color);
 }

@@ -287,12 +287,12 @@ else
 if ($hh=='reports') 
 	{
 	$reports_hh="CLASS=\"head_style_selected\""; $reports_fc="$reports_font"; $reports_bold="$header_selected_bold";
-	$reports_icon="<img src=\"images/icon_black_reports.png\" border=0 alt=\"Reports\" width=14 height=14 valign=middle>";
+	$reports_icon="<img src=\"images/icon_black_reports.png\" border=0 alt=\"Reports\" class=\"nav-icon\">";
 	}
 else 
 	{
 	$reports_hh="CLASS=\"head_style\""; $reports_fc='WHITE'; $reports_bold="$header_nonselected_bold";
-	$reports_icon="<img src=\"images/icon_reports.png\" border=0 alt=\"Reports\" width=14 height=14 valign=middle>";
+	$reports_icon="<img src=\"images/icon_reports.png\" border=0 alt=\"Reports\" class=\"nav-icon\">";
 	}
 if ($hh=='qc')
 	{
@@ -2311,88 +2311,193 @@ if ($subcamp_font_size < 4) {$subcamp_font_size='11';}
         </div>
         <!--end::Container-->
       </nav>
+	<aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+		<!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+          <!--begin::Brand Link-->
+          <a href="<?php echo $ADMIN ?>" class="brand-link">
+            <!--begin::Brand Image-->
+            <img
+              src="<?php echo $selected_logo; ?>"
+              alt="AdminLTE Logo"
+              class="brand-image opacity-75 shadow"
+            />
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-light"><?php echo _QXZ("ADMINISTRATION"); ?></span>
+            <!--end::Brand Text-->
+          </a>
+          <!--end::Brand Link-->
+        </div>
+		<!--end::Sidebar Brand-->
+        <!--begin::Sidebar Search-->
+        <div class="sidebar-search" role="search">
+          <label for="sidebar-search-input" class="visually-hidden">Filter menu</label>
+          <input
+            type="search"
+            id="sidebar-search-input"
+            class="form-control form-control-sm"
+            placeholder="Filter menu…"
+            autocomplete="off"
+            data-lte-toggle="sidebar-search"
+            data-lte-target="#navigation"
+          />
+          <p class="fs-7 text-secondary mt-2 mb-0" data-lte-search-empty role="status" hidden>
+            No matching pages.
+          </p>
+        </div>
+        <!--end::Sidebar Search-->
+		<div class="sidebar-wrapper">
+          <nav class="mt-2" aria-label="Main navigation">
+            <!--begin::Sidebar Menu-->
+            <ul
+              class="nav sidebar-menu flex-column"
+              data-lte-toggle="treeview"
+              data-accordion="false"
+              id="navigation"
+            >
+				<?php
+					if ( ($reports_only_user < 1) and ($qc_only_user < 1) ) {
+				?>
+					<!-- REPORTS NAVIGATION -->
+					<li class="nav-item">
+						<a href="<?php echo $ADMIN ?>?ADD=999999" class="nav-link" >
+							<?php echo $reports_icon ?>
+							<p><?php echo $reports_bold ?> <?php echo _QXZ("Reports"); ?></p>
+						</a>
+					</li>
 
+					<!-- USERS NAVIGATION -->
+					<li class="nav-item">
+						<a href="#" class="nav-link">
+							<?php echo $users_icon ?> 
+							<i class="nav-icon bi bi-clipboard-fill"></i>
+							<p>
+								<?php echo $users_bold ?><?php echo _QXZ("Users"); ?>
+								<span class="nav-badge badge text-bg-secondary me-3">12</span>
+								<i class="nav-arrow bi bi-chevron-right"></i>
+							</p>
+						</a>
+						<ul class="nav nav-treeview">
+							<li class="nav-item">
+								<a href="<?php echo $ADMIN ?>?ADD=0A" class="nav-link">
+									<i class="nav-icon bi bi-circle"></i>
+									<p><?php echo _QXZ("Show Users"); ?></p>
+								</a>
+							</li>
+							<?php if ($add_copy_disabled < 1) { ?>
+								<li class="nav-item">
+									<a href="<?php echo $ADMIN ?>?ADD=1" class="nav-link">
+										<i class="nav-icon bi bi-circle"></i>
+										<p><?php echo _QXZ("Add A New User"); ?></p>
+									</a>
+								</li> 
+								<li class="nav-item">
+									<a href="<?php echo $ADMIN ?>?ADD=1A" class="nav-link">
+										<i class="nav-icon bi bi-circle"></i>
+										<p><?php echo _QXZ("Copy User"); ?></p>
+									</a>
+								</li>
+							<?php } ?>
+
+							<li class="nav-item">
+								<a href="<?php echo $ADMIN ?>?ADD=550" class="nav-link">
+									<i class="nav-icon bi bi-circle"></i>
+									<p><?php echo _QXZ("Search For A User"); ?></p>
+								</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="./user_status.php?user=<?php echo $user ?>" class="nav-link">
+									<i class="nav-icon bi bi-circle"></i>
+									<p><?php echo _QXZ("User Status"); ?></p>
+								</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="./AST_agent_time_sheet.php?agent=<?php echo $user ?>" class="nav-link">
+									<i class="nav-icon bi bi-circle"></i>
+									<p><?php echo _QXZ("Time Sheet"); ?></p>
+								</a>
+							</li>
+							<?php if ( ($SSuser_territories_active > 0) or ($user_territories_active > 0) ) { ?>
+							<li class="nav-item">
+								<a href="./user_territories.php?agent=<?php echo $user ?>" class="nav-link">
+									<i class="nav-icon bi bi-circle"></i>
+									<p><?php echo _QXZ("User Territories"); ?></p>
+								</a>
+							</li>
+							<?php } ?>
+							<?php if ($SSuser_new_lead_limit > 0) { ?>
+							<li class="nav-item">
+								<a href="./admin_user_list_new.php?user=---ALL---&list_id=NONE&stage=overall" class="nav-link">
+									<i class="nav-icon bi bi-circle"></i>
+									<p><?php echo _QXZ("Overall New Lead Limits"); ?></p>
+								</a>
+							</li>
+							<?php } ?>
+							
+						</ul>
+              		</li>
+			<?php } ?>
+			</ul>
+			</nav>
+		</div>
 	  
 <CENTER>
 
 <TABLE BGCOLOR=white cellpadding=0 cellspacing=0 style="width:100%;height:100%;">
-<!-- BEGIN SIDEBAR NAVIGATION -->
-<TR><TD VALIGN=TOP WIDTH=170 BGCOLOR=#<?php echo "$SSmenu_background" ?> ALIGN=CENTER VALIGN=MIDDLE>
-<A HREF="<?php echo $ADMIN ?>"><IMG SRC="<?php echo $selected_logo; ?>" WIDTH=170 HEIGHT=45 BORDER=0 ALT="System logo"></A>
-<B><FONT FACE="ARIAL,HELVETICA" COLOR=white><?php echo _QXZ("ADMINISTRATION"); ?></FONT></B><BR>
+	<!-- BEGIN SIDEBAR NAVIGATION -->
+	<TR>
+		<TD VALIGN=TOP WIDTH=170 BGCOLOR=#<?php echo "$SSmenu_background" ?> ALIGN=CENTER VALIGN=MIDDLE>
+			
+				<TABLE CELLPADDING=2 CELLSPACING=0 BGCOLOR=#<?php echo "$SSmenu_background" ?> WIDTH=160>
+				<?php
+				if ( ($reports_only_user < 1) and ($qc_only_user < 1) )
+					{
+				?>
+					<!-- USERS NAVIGATION -->
+					
+					<TR WIDTH=160 BGCOLOR=#>
+						<TD ALIGN=LEFT  WIDTH=160>
+							<a href="<?php echo $ADMIN ?>?ADD=0A" STYLE="text-decoration:none;">
+							
+							</a>
+						</TD>
+					</TR>
+					<?php
+			if (strlen($users_hh) > 25) { 
+						$list_sh="CLASS=\"subhead_style\"";
+						$new_sh="CLASS=\"subhead_style\"";
+						$copy_sh="CLASS=\"subhead_style\"";
+						$search_sh="CLASS=\"subhead_style\"";
+						$stats_sh="CLASS=\"subhead_style\"";
+						$status_sh="CLASS=\"subhead_style\"";
+						$sheet_sh="CLASS=\"subhead_style\"";
+						$territory_sh="CLASS=\"subhead_style\"";
+						$newlimit_sh="CLASS=\"subhead_style\"";
 
-	<TABLE CELLPADDING=2 CELLSPACING=0 BGCOLOR=#<?php echo "$SSmenu_background" ?> WIDTH=160>
-	<?php
-	if ( ($reports_only_user < 1) and ($qc_only_user < 1) )
-		{
-	?>
-	<!-- REPORTS NAVIGATION -->
-	<TR WIDTH=160><TD><DIV CLASS="horiz_line"></DIV></TD></TR>
-	<TR BGCOLOR=#<?php echo "$SSmenu_background "; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$ADMIN?ADD=999999';\"";} ?>><TD ALIGN=LEFT <?php echo $reports_hh ?>>
-	<a href="<?php echo $ADMIN ?>?ADD=999999" STYLE="text-decoration:none;"><?php echo $reports_icon ?> <FONT STYLE="font-family:HELVETICA;font-size:<?php echo $header_font_size ?>;color:<?php echo $reports_fc ?>"><?php echo $reports_bold ?> <?php echo _QXZ("Reports"); ?> </a>
-	</TD></TR>
+						if ($sh=='list') {$list_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='new') {$new_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='copy') {$copy_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='search') {$search_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='stats') {$stats_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='status') {$status_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='sheet') {$sheet_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='territory') {$territory_sh="CLASS=\"subhead_style_selected\"";}
+						if ($sh=='newlimit') {$newlimit_sh="CLASS=\"subhead_style_selected\"";}
 
-	<!-- USERS NAVIGATION -->
-	<TR WIDTH=100%><TD><DIV CLASS="horiz_line"></DIV></TD></TR>
-	<TR WIDTH=160 BGCOLOR=#<?php echo "$SSmenu_background "; if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$ADMIN?ADD=0A';\"";} ?>><TD ALIGN=LEFT <?php echo $users_hh ?> WIDTH=160>
-	<a href="<?php echo $ADMIN ?>?ADD=0A" STYLE="text-decoration:none;"><?php echo $users_icon ?> <FONT STYLE="font-family:HELVETICA;font-size:<?php echo $header_font_size ?>;color:<?php echo $users_fc ?>"><?php echo $users_bold ?><?php echo _QXZ("Users"); ?></a>
-	</TD></TR>
-	<?php
-	if (strlen($users_hh) > 25) 
-		{ 
-		$list_sh="CLASS=\"subhead_style\"";
-		$new_sh="CLASS=\"subhead_style\"";
-		$copy_sh="CLASS=\"subhead_style\"";
-		$search_sh="CLASS=\"subhead_style\"";
-		$stats_sh="CLASS=\"subhead_style\"";
-		$status_sh="CLASS=\"subhead_style\"";
-		$sheet_sh="CLASS=\"subhead_style\"";
-		$territory_sh="CLASS=\"subhead_style\"";
-		$newlimit_sh="CLASS=\"subhead_style\"";
-
-		if ($sh=='list') {$list_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='new') {$new_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='copy') {$copy_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='search') {$search_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='stats') {$stats_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='status') {$status_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='sheet') {$sheet_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='territory') {$territory_sh="CLASS=\"subhead_style_selected\"";}
-		if ($sh=='newlimit') {$newlimit_sh="CLASS=\"subhead_style_selected\"";}
-
-		?>
-	<TR <?php echo $list_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$ADMIN?ADD=0A';\"";} ?>><TD ALIGN=LEFT>
-	 &nbsp; <a href="<?php echo $ADMIN ?>?ADD=0A" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("Show Users"); ?> </a>
-	</TR><TR <?php echo $new_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$ADMIN?ADD=1';\"";} ?>><TD ALIGN=LEFT>
-	<?php if ($add_copy_disabled < 1) { ?>
-	 &nbsp; <a href="<?php echo $ADMIN ?>?ADD=1" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("Add A New User"); ?> </a>
-	</TR><TR <?php echo $copy_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$ADMIN?ADD=1A';\"";} ?>><TD ALIGN=LEFT>
-	 &nbsp; <a href="<?php echo $ADMIN ?>?ADD=1A" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("Copy User"); ?> </a>
-	</TR><TR <?php echo $search_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$ADMIN?ADD=550';\"";} ?>><TD ALIGN=LEFT>
-	<?php } ?>
-	 &nbsp; <a href="<?php echo $ADMIN ?>?ADD=550" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("Search For A User"); ?> </a>
-	</TR><TR <?php echo $stats_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='./user_stats.php?user=$user';\"";} ?>><TD ALIGN=LEFT>
-	 &nbsp; <a href="./user_stats.php?user=<?php echo $user ?>" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("User Stats"); ?> </a>
-	</TR><TR <?php echo $status_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='./user_status.php?user=$user';\"";} ?>><TD ALIGN=LEFT>
-	 &nbsp; <a href="./user_status.php?user=<?php echo $user ?>" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("User Status"); ?> </a>
-	</TR><TR <?php echo $sheet_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='./AST_agent_time_sheet.php?agent=$user';\"";} ?>><TD ALIGN=LEFT>
-	 &nbsp; <a href="./AST_agent_time_sheet.php?agent=<?php echo $user ?>" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("Time Sheet"); ?> </a> </TD></TR>
-	 <?php
-	if ( ($SSuser_territories_active > 0) or ($user_territories_active > 0) )
-		{ ?>
-
-	</TR><TR <?php echo $territory_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='./user_territories.php?agent=$user';\"";} ?>><TD ALIGN=LEFT>
-	 &nbsp; <a href="./user_territories.php?agent=<?php echo $user ?>" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("User Territories"); ?> </a> </TD></TR>
-
-	 <?php
-		}
-	if ($SSuser_new_lead_limit > 0)
-		{ ?>
-
-	</TR><TR <?php echo $newlimit_sh ?><?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='./admin_user_list_new.php?user=---ALL---&list_id=NONE&stage=overall';\"";} ?>><TD ALIGN=LEFT>
-	 &nbsp; <a href="./admin_user_list_new.php?user=---ALL---&list_id=NONE&stage=overall" STYLE="text-decoration:none;"><FONT STYLE="font-family:HELVETICA;font-size:<?php echo $subheader_font_size ?>;color:BLACK"><?php echo _QXZ("Overall New Lead Limits"); ?> </a> </TD></TR>
-
-	<?php }
+						?>
+						
+						<TR <?php echo $new_sh ?>
+							<?php if ($SSadmin_row_click > 0) {echo " onclick=\"window.document.location='$ADMIN?ADD=1';\"";} ?>>
+							<TD ALIGN=LEFT>
+									
+								
+									
+						
+						
+	<?php					
 	  }
 	?>
 	<!-- CAMPAIGNS NAVIGATION -->

@@ -6855,6 +6855,12 @@ echo "<div id='HelpDisplayDiv' class='help_info' style='display:none;'></div>";
 echo "<link rel=\"stylesheet\" href=\"calendar.css\">\n";
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"vicidial_stylesheet.php\">\n";
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"css\custom.css\">\n";
+echo '<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />';
+	
 
 if ($SSnocache_admin=='1')
 	{
@@ -52257,13 +52263,13 @@ echo "</FONT>\n";
 </TD></TR><TABLE>
 </body>
 <script language="Javascript">
-if (!window.A_TCALSIDX)
-	{
-	if (document.addEventListener)
-		window.removeEventListener('scroll', f_tcalHideAll);
-	if (window.attachEvent)
-		window.detachEvent('onscroll', f_tcalHideAll);
-	}
+// if (!window.A_TCALSIDX)
+// 	{
+// 	if (document.addEventListener)
+// 		window.removeEventListener('scroll', f_tcalHideAll);
+// 	if (window.attachEvent)
+// 		window.detachEvent('onscroll', f_tcalHideAll);
+// 	}
 </script>
 <?php
 
