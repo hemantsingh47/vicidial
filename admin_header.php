@@ -1978,7 +1978,8 @@ if ($subcamp_font_size < 4) {$subcamp_font_size='11';}
 			<A HREF="<?php echo $ADMIN ?>" class="sidebar-brand img-thumbnail">
 				<IMG SRC="<?php echo $selected_logo; ?>" WIDTH=170 HEIGHT=45 BORDER=0 ALT="System logo">
 			</A>
-			<B><FONT FACE="ARIAL,HELVETICA" COLOR=white><?php echo _QXZ("ADMINISTRATION"); ?></FONT></B><BR>
+			<BR>
+			<B><FONT FACE="ARIAL,HELVETICA" COLOR=white style="font-size: 0.9rem; padding:5px;"><?php echo _QXZ("SYSTEM MANAGEMENT"); ?></FONT></B><BR>
 
 	<TABLE CELLPADDING=2 CELLSPACING=0 BGCOLOR=#<?php echo "$SSmenu_background" ?> WIDTH=160>
 	<?php
