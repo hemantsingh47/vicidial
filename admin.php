@@ -5080,7 +5080,7 @@ else
 	$label_phone_number = preg_replace('/[^- \.\,\_0-9\p{L}]/u','',$label_phone_number);
 	$label_phone_code = preg_replace('/[^- \.\,\_0-9\p{L}]/u','',$label_phone_code);
 	$label_alt_phone = preg_replace('/[^- \.\,\_0-9\p{L}]/u','',$label_alt_phone);
-	$label_security_phrase = preg_replace('/[^- \.\,\_0-9\p{L}]/u','',$label_security_phrase);
+	$label_security_phrase = preg_replace('/[^- \.\,\_0-9\p{L}]/u','',$label_security_phrase	);
 	$label_email = preg_replace('/[^- \.\,\_0-9\p{L}]/u','',$label_email);
 	$label_comments = preg_replace('/[^- \.\,\_0-9\p{L}]/u','',$label_comments);
 	$slave_db_server = preg_replace('/[^- \.\,\:\_0-9\p{L}]/u','',$slave_db_server);
@@ -5383,7 +5383,7 @@ $rjs_debug='';
 ##### END VARIABLE FILTERING FOR SECURITY #####
 
 
-# ViciDial database administration
+# GamaDIal database administration
 # admin.php
 #
 # CHANGELOG:
@@ -5583,7 +5583,7 @@ $rjs_debug='';
 # 90521-0029 - Added user territories enable option
 # 90522-0506 - Security fix for logins when using non-latin setting
 # 90524-2307 - Changed Reports screen layout
-# 90528-2055 - Added ViciDial recording limit field in servers and phone_context to phones
+# 90528-2055 - Added GamaDIal recording limit field in servers and phone_context to phones
 # 90530-1206 - Changed List Mix to allow for 40 mixes
 # 90531-1802 - Added auto-generated options for users, campaigns, in-groups, etc..., added option to HIDE custphone
 # 90531-2339 - Added Dynamic options for Call Menu
@@ -5615,7 +5615,7 @@ $rjs_debug='';
 # 90917-1108 - Added Extra Voicemail boxes config in Admin section
 # 90919-2251 - Removed all SELECT STAR instances in the code, code cleanup to conform to standard
 # 90924-1645 - Added list_id overrides for cid, am_message and drop in-group
-# 90930-2107 - Added agent territory selection options for ViciDial agents
+# 90930-2107 - Added agent territory selection options for GamaDIal agents
 # 91026-1050 - Added AREACODE DNC option for campaigns
 # 91031-1232 - Added carrier_description field, campaigns links from in-group screen, server links on reports page, agent ranks listing active only
 # 91121-0334 - Limited list called count display to 100+
@@ -5632,7 +5632,7 @@ $rjs_debug='';
 # 100116-0718 - Added presets to script select list
 # 100122-0747 - Added NOT-LOGGED-IN-AGENTS option for User Groups
 # 100123-1301 - Added DID record call option
-# 100127-0601 - Added Vtiger ViciDial user_level role lookup
+# 100127-0601 - Added Vtiger GamaDIal user_level role lookup
 # 100127-1546 - Added ignore_list_script_override option for ingroups
 # 100219-1309 - Added agent dispo log system settings option and user call_log options
 # 100220-1411 - Added system settings and servers custom_dialplan_entry
@@ -6332,8 +6332,8 @@ $rjs_debug='';
 
 # make sure you have added a user to the vicidial_users MySQL table with at least user_level 9 to access this page the first time
 
-$admin_version = '2.14-930a';
-$build = '241021-2138';
+$admin_version = '';
+$build = '';
 
 $STARTtime = date("U");
 $SQLdate = date("Y-m-d H:i:s");
@@ -6407,8 +6407,7 @@ if ($force_logout)
 		echo "<head>\n";
 		echo "<!-- Logout screen $PHP_SELF -->\n";
 		echo "<META NAME=\"ROBOTS\" CONTENT=\"NONE\">\n";
-		echo "<META NAME=\"COPYRIGHT\" CONTENT=\"&copy; 2024 ViciDial Group\">\n";
-		echo "<META NAME=\"AUTHOR\" CONTENT=\"ViciDial Group\">\n";
+		echo "<META NAME=\"AUTHOR\" CONTENT=\"GamaDIal Group\">\n";
 		?>
 		<script type="text/javascript">
 
@@ -6946,10 +6945,10 @@ if ($SSnocache_admin=='1')
 	}
 echo "<html>\n";
 echo "<head>\n";
-echo "<!-- VERSION: $admin_version   BUILD: $build   ADD: $ADD   PHP_SELF: $PHP_SELF-->\n";
+
 echo "<META NAME=\"ROBOTS\" CONTENT=\"NONE\">\n";
-echo "<META NAME=\"COPYRIGHT\" CONTENT=\"&copy; 2024 ViciDial Group\">\n";
-echo "<META NAME=\"AUTHOR\" CONTENT=\"ViciDial Group\">\n";
+echo "<META NAME=\"COPYRIGHT\" CONTENT=\"&copy; 2024 GamaDIal Group\">\n";
+echo "<META NAME=\"AUTHOR\" CONTENT=\"GamaDIal Group\">\n";
 echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\" />\n";
 echo "<meta name=\"color-scheme\" content=\"light dark\" />\n";
 echo "<meta name=\"theme-color\" content=\"#007bff\" media=\"(prefers-color-scheme: light)\" />\n";
@@ -12176,7 +12175,7 @@ if ($ADD=="2")
 					$salt = substr($user_name, 0, 2);
 					$salt = '$1$' . $salt . '$';
 					$encrypted_password = crypt($user_password, $salt);
-					### search for role in ViciDial
+					### search for role in GamaDIal
 					$stmt = "SELECT vtiger_role FROM vtiger_vicidial_roles where user_level='$user_level';";
 					$rslt=mysql_to_mysqli($stmt, $link);
 					if ($DB) {echo "$stmt\n";}
@@ -12495,7 +12494,7 @@ if ($ADD=="2A")
 					$salt = substr($user_name, 0, 2);
 					$salt = '$1$' . $salt . '$';
 					$encrypted_password = crypt($user_password, $salt);
-					### search for role in ViciDial
+					### search for role in GamaDIal
 					$stmt = "SELECT vtiger_role FROM vtiger_vicidial_roles where user_level='$user_level';";
 					$rslt=mysql_to_mysqli($stmt, $link);
 					if ($DB) {echo "$stmt\n";}
@@ -16489,7 +16488,7 @@ if ($ADD=="4A")
 				$salt = substr($user_name, 0, 2);
 				$salt = '$1$' . $salt . '$';
 				$encrypted_password = crypt($user_password, $salt);
-				### search for role in ViciDial
+				### search for role in GamaDIal
 				$stmt = "SELECT vtiger_role FROM vtiger_vicidial_roles where user_level='$user_level';";
 				$rslt=mysql_to_mysqli($stmt, $link);
 				if ($DB) {echo "$stmt\n";}
@@ -16788,7 +16787,7 @@ if ($ADD=="4B")
 				$salt = substr($user_name, 0, 2);
 				$salt = '$1$' . $salt . '$';
 				$encrypted_password = crypt($user_password, $salt);
-				### search for role in ViciDial
+				### search for role in GamaDIal
 				$stmt = "SELECT vtiger_role FROM vtiger_vicidial_roles where user_level='$user_level';";
 				$rslt=mysql_to_mysqli($stmt, $link);
 				if ($DB) {echo "$stmt\n";}
@@ -17056,7 +17055,7 @@ if ($ADD==4)
 				$salt = substr($user_name, 0, 2);
 				$salt = '$1$' . $salt . '$';
 				$encrypted_password = crypt($user_password, $salt);
-				### search for role in ViciDial
+				### search for role in GamaDIal
 				$stmt = "SELECT vtiger_role FROM vtiger_vicidial_roles where user_level='$user_level';";
 				$rslt=mysql_to_mysqli($stmt, $link);
 				if ($DB) {echo "$stmt\n";}
@@ -51002,7 +51001,7 @@ if ($ADD==999996)
 						if ($DB) {echo "|$stmt|\n";}
 						$rslt=mysql_to_mysqli($stmt, $link);
 
-						echo _QXZ("Passwords have been updated, you may now continue on into Administration").". <BR><BR>"._QXZ("You may want to start by reading the ViciDial Manager Manual available at")." <a href=\"http://www.vicidial.org/store.php#MANAGER\" target=\"_blank\">vicidial.org</a> ("._QXZ("there is a free version available").")\n";
+						echo _QXZ("Passwords have been updated, you may now continue on into Administration").". <BR><BR>"._QXZ("You may want to start by reading the GamaDIal Manager Manual available at")." <a href=\"http://www.vicidial.org/store.php#MANAGER\" target=\"_blank\">vicidial.org</a> ("._QXZ("there is a free version available").")\n";
 						}
 					}
 				}
@@ -51014,7 +51013,7 @@ if ($ADD==999996)
 			echo "<TABLE><TR><TD>\n";
 			echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
-			echo "<br><b>"._QXZ("Welcome to ViciDial, initial setup screen")."</b><br><br><form action=$PHP_SELF method=POST name=userform id=userform>\n";
+			echo "<br><b>"._QXZ("Welcome to GamaDIal, initial setup screen")."</b><br><br><form action=$PHP_SELF method=POST name=userform id=userform>\n";
 			echo "<input type=hidden name=ADD value=999996>\n";
 			echo "<input type=hidden name=DB value=\"$DB\">\n";
 			echo "<input type=hidden name=stage value=SUBMIT>\n";
@@ -51027,7 +51026,7 @@ if ($ADD==999996)
 
 			echo "<tr><td colspan=2> &nbsp; </td></tr>\n";
 
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=left colspan=2>"._QXZ("The next three default passwords are defined in the System Settings section, and you can change them after you define them here. It is a good idea to make these passwords strong so that no one can hack into your phone accounts and place phone calls without you knowing. The default registration password used when new phones are added to the system as the SIP or IAX VOIP phone password. The default phone web login password used when new phones are added to the system, as the phone password that an agent would use in the ViciDial Agent Interface. The default server password used when new servers are added to the system for servers to communicate with each other.")."</td></tr>\n";
+			echo "<tr bgcolor=#$SSstd_row4_background><td align=left colspan=2>"._QXZ("The next three default passwords are defined in the System Settings section, and you can change them after you define them here. It is a good idea to make these passwords strong so that no one can hack into your phone accounts and place phone calls without you knowing. The default registration password used when new phones are added to the system as the SIP or IAX VOIP phone password. The default phone web login password used when new phones are added to the system, as the phone password that an agent would use in the GamaDIal Agent Interface. The default server password used when new servers are added to the system for servers to communicate with each other.")."</td></tr>\n";
 
 			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Default Phone Registration Password").": </td><td align=left style=\"display:table-cell; vertical-align:middle;\" NOWRAP><input type=text id=reg_passX name=default_phone_registration_password size=40 maxlength=100 value=\"$SSdefault_phone_registration_password\" onkeyup=\"return pwdChanged('reg_passX','reg_pass_imgX','pass_lengthX','$SSrequire_password_length');\"> &nbsp; &nbsp; <font size=1>"._QXZ("Strength").":</font> <IMG id=reg_pass_imgX src='images/pixel.gif' style=\"vertical-align:middle;\" onLoad=\"return pwdChanged('reg_passX','reg_pass_imgX','pass_lengthX','$SSrequire_password_length');\"> &nbsp; <font size=1> "._QXZ("Length").": <span id=pass_lengthX name=pass_lengthX>0</span></font></td></tr>\n";
 
@@ -51077,16 +51076,16 @@ if ($ADD==999995)
 	echo "<TABLE><TR><TD>\n";
 	echo "<FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
 
-	echo "<br><B> "._QXZ("Welcome to ViciDial: copyright, trademark and license page")."</B><BR><BR>\n";
+	echo "<br><B> "._QXZ("Welcome to GamaDIal: copyright, trademark and license page")."</B><BR><BR>\n";
 	echo "<center><TABLE width=$section_width cellspacing=5 cellpadding=2>\n";
 
-	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top><B><font size=3>"._QXZ("Copyright").": </B></td><td align=left> &nbsp; "._QXZ("The ViciDial Contact Center Suite is maintained by the")." <a href=\"http://www.vicidial.com/\" target=\"_blank\">ViciDial Group</a>, &copy; 2024</td></tr>\n";
+	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top><B><font size=3>"._QXZ("Copyright").": </B></td><td align=left> &nbsp; "._QXZ("The GamaDIal Contact Center Suite is maintained by the")." <a href=\"http://www.vicidial.com/\" target=\"_blank\">GamaDIal Group</a>, &copy; 2024</td></tr>\n";
 
-	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top><B><font size=3>"._QXZ("Trademark").": </B></td><td align=left> &nbsp; \"VICIDIAL\" "._QXZ("is a registered trademark of the")." <a href=\"http://www.vicidial.com/\" target=\"_blank\">ViciDial Group</a>. Here is our <a href=\"http://www.vicidial.com/?page_id=262\" target=\"_blank\">"._QXZ("trademark use policy")."</a></td></tr>\n";
+	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top><B><font size=3>"._QXZ("Trademark").": </B></td><td align=left> &nbsp; \"VICIDIAL\" "._QXZ("is a registered trademark of the")." <a href=\"http://www.vicidial.com/\" target=\"_blank\">GamaDIal Group</a>. Here is our <a href=\"http://www.vicidial.com/?page_id=262\" target=\"_blank\">"._QXZ("trademark use policy")."</a></td></tr>\n";
 
-	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top><B><font size=3>"._QXZ("License").": </B></td><td align=left> &nbsp; "._QXZ("The ViciDial Contact Center Suite is released under the")." <a href=\"http://www.vicidial.com/?page_id=260\" target=\"_blank\">AGPLv2 "._QXZ("open source license")."</a>.</td></tr>\n";
+	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top><B><font size=3>"._QXZ("License").": </B></td><td align=left> &nbsp; "._QXZ("The GamaDIal Contact Center Suite is released under the")." <a href=\"http://www.vicidial.com/?page_id=260\" target=\"_blank\">AGPLv2 "._QXZ("open source license")."</a>.</td></tr>\n";
 
-	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top nowrap><B><font size=3>"._QXZ("Source Code").": </B></td><td align=left> &nbsp; "._QXZ("The ViciDial Call Center Suite software is available for download, and for use, free of cost. You can download the easy to install")." <a href=\"http://vicibox.com/server/index.html\" target=\"_blank\">"._QXZ("ViciBox CD ISO version")."</a>, "._QXZ("or only the")." <a href=\"http://sourceforge.net/projects/astguiclient/files/\" target=\"_blank\">"._QXZ("source code")."</a></td></tr>\n";
+	echo "<tr bgcolor=#$SSstd_row4_background><td align=right valign=top nowrap><B><font size=3>"._QXZ("Source Code").": </B></td><td align=left> &nbsp; "._QXZ("The GamaDIal Call Center Suite software is available for download, and for use, free of cost. You can download the easy to install")." <a href=\"http://vicibox.com/server/index.html\" target=\"_blank\">"._QXZ("ViciBox CD ISO version")."</a>, "._QXZ("or only the")." <a href=\"http://sourceforge.net/projects/astguiclient/files/\" target=\"_blank\">"._QXZ("source code")."</a></td></tr>\n";
 
 	echo "</TABLE></center>\n";
 
@@ -52409,10 +52408,10 @@ $RUNtime = ($ENDtime - $STARTtime);
 echo "</TD></TR>\n";
 echo "<TR><TD bgcolor=#$SSmenu_background ALIGN=CENTER>\n";
 echo "<FONT STYLE=\"font-family:HELVETICA;font-size:9;color:white;\"><br><br><!-- RUNTIME: $RUNtime seconds<BR> -->";
-echo _QXZ("VERSION").": $admin_version<BR>";
-echo _QXZ("BUILD").": $build\n";
 if (!preg_match("/_BUILD_/",$SShosted_settings))
-	{echo "<BR><a href=\"$PHP_SELF?ADD=999995\"><font color=white>&copy; 2024 ViciDial Group</font></a><BR><img src=\"images/pixel.gif\">";}
+	{
+		//echo "<BR><a href=\"$PHP_SELF?ADD=999995\"><font color=white>&copy; 2026 GamaDIal Group</font></a><BR><img src=\"images/pixel.gif\">";
+	}
 echo "</FONT>\n";
 ?>
 
