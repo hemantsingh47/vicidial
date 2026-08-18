@@ -3036,15 +3036,15 @@ textarea.form-control-lg {
   --bs-btn-disabled-bg: #198754;
   --bs-btn-disabled-border-color: #198754;
 }
-
-.btn-info {
-  --bs-btn-color: #000;
-  --bs-btn-bg: #0dcaf0;
-  --bs-btn-border-color: #0dcaf0;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: rgb(19.3333333333%, 82.3333333333%, 95%);
-  --bs-btn-hover-border-color: rgb(14.5882352941%, 81.2941176471%, 94.7058823529%);
-  --bs-btn-focus-shadow-rgb: 11, 172, 204;
+.btn-gama {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #ff7529;
+  --bs-btn-border-color: #ff7529;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgb(199, 96, 41);
+  --bs-btn-hover-border-color: rgb(255, 117, 41);
+  --bs-btn-focus-shadow-rgb: 255, 117, 41;
+  
   --bs-btn-active-color: #000;
   --bs-btn-active-bg: rgb(24.0784313725%, 83.3725490196%, 95.2941176471%);
   --bs-btn-active-border-color: rgb(14.5882352941%, 81.2941176471%, 94.7058823529%);
@@ -15482,15 +15482,20 @@ html.maximized-card {
 .register-box {
   width: 400px;
 }
+.welcome-box {
+  width: 500px;
+}
 @media (max-width: 576px) {
   .login-box,
-  .register-box {
+  .register-box,
+  .welcome-box {
     width: 90%;
     margin-top: 0.5rem;
   }
 }
 .login-box .card,
-.register-box .card {
+.register-box .card,
+.welcome-box .card {
   margin-bottom: 0;
 }
 

@@ -106,39 +106,64 @@ if ( ($SSweb_logo!='default_new') and ($SSweb_logo!='default_old') )
 		}
 	}
 ##### END Define colors and logo #####
-
-echo"<HTML><HEAD>\n";
-echo"<TITLE>"._QXZ("Welcome Screen")."</TITLE>\n";
-echo"<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=utf-8\">\n";
-echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"../agc/css/style.css\" />\n";
-echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"../agc/css/custom.css\" />\n";
-echo"</HEAD>\n";
-echo "<BODY BGCOLOR=WHITE MARGINHEIGHT=0 MARGINWIDTH=0>\n";
-echo "<table width=\"100%\"><tr><td></td>\n";
-echo "</tr></table>\n";
-echo "<br /><br /><br /><center><table width=\"460px\" cellpadding=\"3\" cellspacing=\"0\" bgcolor=\"#$SSframe_background\"><tr bgcolor=\"white\">";
-echo "<td align=\"left\" valign=\"bottom\" bgcolor=\"#$SSmenu_background\" width=\"170\"><img src=\"$selected_logo\" border=\"0\" height=\"45\" width=\"170\" alt=\"Agent Screen\" /></td>";
-echo "<td align=\"center\" valign=\"middle\" bgcolor=\"#$SSmenu_background\"> <font class=\"sh_text_white\">"._QXZ("Welcome")."</font> </td>";
-echo "</tr>\n";
-echo "<tr><td align=\"left\" colspan=\"2\"><font size=\"1\"> &nbsp; </font></td></tr>\n";
-
-echo "<TR><TD ALIGN=CENTER COLSPAN=2><font size=1> &nbsp; </TD></TR>\n";
-echo "<TR><TD ALIGN=CENTER COLSPAN=2><font class=\"skb_text\"> <a href=\"../agc/$SSagent_script\">"._QXZ("Agent Login")."</a> </TD></TR>\n";
-echo "<TR><TD ALIGN=CENTER COLSPAN=2><font size=1> &nbsp; </TD></TR>\n";
-if ($hide_timeclock_link < 1)
-	{echo "<TR><TD ALIGN=CENTER COLSPAN=2><font class=\"skb_text\"> <a href=\"../agc/timeclock.php?referrer=welcome\"> "._QXZ("Timeclock")."</a> </TD></TR>\n";}
-echo "<TR><TD ALIGN=CENTER COLSPAN=2><font size=1> &nbsp; </TD></TR>\n";
-if ($SShopper_hold_inserts > 0)
-	{
-	echo "<TR><TD ALIGN=CENTER COLSPAN=2><font class=\"skb_text\"> <a href=\"../$admin_web_directory/hci_screen.php\"> "._QXZ("HCI Screen")."</a> </TD></TR>\n";
-	echo "<TR><TD ALIGN=CENTER COLSPAN=2><font size=1> &nbsp; </TD></TR>\n";
-	}
-echo "<TR><TD ALIGN=CENTER COLSPAN=2><font class=\"skb_text\"> <a href=\"../$admin_web_directory/admin.php\">"._QXZ("Administration")."</a> </TD></TR>\n";
-echo "<TR><TD ALIGN=CENTER COLSPAN=2><font size=1> &nbsp; </TD></TR>\n";
-
-echo "</table></center>\n";
-echo "</form>\n\n";
-echo "</BODY>\n\n";
-echo "</HTML>\n\n";
-exit;
 ?>
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title> <?php echo _QXZ("Welcome Screen"); ?> </title>
+	<link rel="stylesheet" type="text/css" href="../agc/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="../agc/css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+  </head>
+<body class="register-page bg-body-secondary">
+    <main class="welcome-box">
+      <!-- /.register-logo -->
+      <div class="card card-outline card-primary">
+        <div class="card-header">
+          <div class="link-dark text-center link-offset-2 link-opacity-100 link-opacity-50-hover d-flex align-items-center justify-content-center text-decoration-none">
+			  <img src="<?php echo$selected_logo?>"  alt="Agent Screen" />
+		  </div>
+			<div class="link-dark text-center link-offset-2 link-opacity-100 link-opacity-50-hover d-flex align-items-center justify-content-center text-decoration-none">
+            <h3 class="mb-2"><b><?php echo _QXZ("Welcome to Gama Dial"); ?></b></h3>
+			
+		</div>
+		<div class="text-center">
+		<h6 class="mb-2 text-sm text-muted"><?php echo _QXZ("Advanced Contact Center & Call Management Platform"); ?></h6>
+		</div>
+        </div>
+        <div class="card-body register-card-body">
+          <div class="social-auth-links text-center mb-3 d-grid gap-2">
+            <a href="../<?php echo $admin_web_directory ?>/admin.php" class="btn btn-gama">
+              <?php echo _QXZ("Administration"); ?>
+            </a>
+
+            <a href="../agc/<?php echo $SSagent_script?>" class="btn btn-primary">
+				<?php echo _QXZ("Agent Login"); ?>
+            </a>
+			<?php if ($hide_timeclock_link < 1) { ?> 
+				<a href="../agc/timeclock.php?referrer=welcome" class="btn btn-secondary">
+					<?php echo _QXZ("Timeclock"); ?>
+				</a>
+			
+			<?php } ?>
+
+			<?php if ($SShopper_hold_inserts > 0) { ?> 
+				<a href="../<?php echo $admin_web_directory ?>/hci_screen.php" class="btn btn-warning">
+					<?php echo _QXZ("HCI Screen"); ?>
+				</a>
+			
+			<?php } ?>
+
+            
+          </div>
+
+
+         
+        </div>
+
+      </div>
+    </main>
+
+  </body>
