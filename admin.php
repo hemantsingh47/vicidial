@@ -16,104 +16,210 @@ require("functions.php");
 ######################################################################################################
 ######################################################################################################
 
-$page_width='870';
+$page_width='100%';
 $section_width='850';
-$header_font_size='12';
-$subheader_font_size='11';
-$subcamp_font_size='11';
+$header_font_size='16';
+$subheader_font_size='15';
+$subcamp_font_size='15';
 $header_selected_bold='<b>';
 $header_nonselected_bold='';
-$users_color =		'#FFFF99';
-$campaigns_color =	'#FFCC99';
-$lists_color =		'#FFCCCC';
-$ingroups_color =	'#CC99FF';
-$remoteagent_color ='#CCFFCC';
-$usergroups_color =	'#CCFFFF';
-$scripts_color =	'#99FFCC';
-$filters_color =	'#CCCCCC';
-$admin_color =		'#FF99FF';
-$reports_color =	'#99FF33';
-	$times_color =		'#FF33FF';
-	$shifts_color =		'#FF33FF';
-	$phones_color =		'#FF33FF';
-	$conference_color =	'#FF33FF';
-	$server_color =		'#FF33FF';
-	$templates_color =	'#FF33FF';
-	$carriers_color =	'#FF33FF';
-	$settings_color = 	'#FF33FF';
-	$label_color =		'#FF33FF';
-	$status_color = 	'#FF33FF';
-	$moh_color = 		'#FF33FF';
-	$vm_color = 		'#FF33FF';
-	$tts_color = 		'#FF33FF';
-	$cc_color = 		'#FF33FF';
-	$cts_color = 		'#FF33FF';
-$subcamp_color =	'#FF9933';
-$users_font =		'BLACK';
-$campaigns_font =	'BLACK';
-$lists_font =		'BLACK';
-$ingroups_font =	'BLACK';
-$remoteagent_font =	'BLACK';
-$usergroups_font =	'BLACK';
-$scripts_font =		'BLACK';
-$filters_font =		'BLACK';
-$admin_font =		'BLACK';
-$qc_font =			'BLACK';
-$reports_font =		'BLACK';
-	$times_font =		'BLACK';
-	$phones_font =		'BLACK';
-	$conference_font =	'BLACK';
-	$server_font =		'BLACK';
-	$settings_font = 	'BLACK';
-	$label_font = 	'BLACK';
-	$status_font = 	'BLACK';
-	$moh_font = 	'BLACK';
-	$vm_font = 		'BLACK';
-	$tts_font = 	'BLACK';
-	$cc_font =		'BLACK';
-	$cts_font = 	'BLACK';
-$subcamp_font =		'BLACK';
+// $users_color =		'#FFFF99';
+// $campaigns_color =	'#FFCC99';
+// $lists_color =		'#FFCCCC';
+// $ingroups_color =	'#CC99FF';
+// $remoteagent_color ='#CCFFCC';
+// $usergroups_color =	'#CCFFFF';
+// $scripts_color =	'#99FFCC';
+// $filters_color =	'#CCCCCC';
+// $admin_color =		'#FF99FF';
+// $reports_color =	'#99FF33';
+// 	$times_color =		'#FF33FF';
+// 	$shifts_color =		'#FF33FF';
+// 	$phones_color =		'#FF33FF';
+// 	$conference_color =	'#FF33FF';
+// 	$server_color =		'#FF33FF';
+// 	$templates_color =	'#FF33FF';
+// 	$carriers_color =	'#FF33FF';
+// 	$settings_color = 	'#FF33FF';
+// 	$label_color =		'#FF33FF';
+// 	$status_color = 	'#FF33FF';
+// 	$moh_color = 		'#FF33FF';
+// 	$vm_color = 		'#FF33FF';
+// 	$tts_color = 		'#FF33FF';
+// 	$cc_color = 		'#FF33FF';
+// 	$cts_color = 		'#FF33FF';
+// $subcamp_color =	'#FF9933';
+// $users_font =		'BLACK';
+// $campaigns_font =	'BLACK';
+// $lists_font =		'BLACK';
+// $ingroups_font =	'BLACK';
+// $remoteagent_font =	'BLACK';
+// $usergroups_font =	'BLACK';
+// $scripts_font =		'BLACK';
+// $filters_font =		'BLACK';
+// $admin_font =		'BLACK';
+// $qc_font =			'BLACK';
+// $reports_font =		'BLACK';
+// 	$times_font =		'BLACK';
+// 	$phones_font =		'BLACK';
+// 	$conference_font =	'BLACK';
+// 	$server_font =		'BLACK';
+// 	$settings_font = 	'BLACK';
+// 	$label_font = 	'BLACK';
+// 	$status_font = 	'BLACK';
+// 	$moh_font = 	'BLACK';
+// 	$vm_font = 		'BLACK';
+// 	$tts_font = 	'BLACK';
+// 	$cc_font =		'BLACK';
+// 	$cts_font = 	'BLACK';
+// $subcamp_font =		'BLACK';
 
-### comment this section out for colorful section headings
-$users_color =		'#E6E6E6';
-$campaigns_color =	'#E6E6E6';
-$lists_color =		'#E6E6E6';
-$ingroups_color =	'#E6E6E6';
-$remoteagent_color ='#E6E6E6';
-$usergroups_color =	'#E6E6E6';
-$scripts_color =	'#E6E6E6';
-$filters_color =	'#E6E6E6';
-$admin_color =		'#E6E6E6';
-$qc_color =			'#E6E6E6';
-$reports_color =	'#E6E6E6';
-	$times_color =		'#C6C6C6';
-	$shifts_color =		'#C6C6C6';
-	$phones_color =		'#C6C6C6';
-	$conference_color =	'#C6C6C6';
-	$server_color =		'#C6C6C6';
-	$templates_color =	'#C6C6C6';
-	$carriers_color =	'#C6C6C6';
-	$settings_color = 	'#C6C6C6';
-	$label_color =		'#C6C6C6';
-	$colors_color =		'#C6C6C6';
-	$status_color = 	'#C6C6C6';
-	$moh_color = 		'#C6C6C6';
-	$vm_color = 		'#C6C6C6';
-	$tts_color = 		'#C6C6C6';
-	$cc_color = 		'#C6C6C6';
-	$cts_color = 		'#C6C6C6';
-	$sc_color = 		'#C6C6C6';
-	$sg_color = 		'#C6C6C6';
-	$ar_color = 		'#C6C6C6';
-	$il_color = 		'#C6C6C6';
-	$cg_color = 		'#C6C6C6';
-	$vmmg_color = 		'#C6C6C6';
-$subcamp_color =	'#C6C6C6';
+// ### comment this section out for colorful section headings
+// $users_color =		'#E6E6E6';
+// $campaigns_color =	'#E6E6E6';
+// $lists_color =		'#E6E6E6';
+// $ingroups_color =	'#E6E6E6';
+// $remoteagent_color ='#E6E6E6';
+// $usergroups_color =	'#E6E6E6';
+// $scripts_color =	'#E6E6E6';
+// $filters_color =	'#E6E6E6';
+// $admin_color =		'#E6E6E6';
+// $qc_color =			'#E6E6E6';
+// $reports_color =	'#E6E6E6';
+// 	$times_color =		'#C6C6C6';
+// 	$shifts_color =		'#C6C6C6';
+// 	$phones_color =		'#C6C6C6';
+// 	$conference_color =	'#C6C6C6';
+// 	$server_color =		'#C6C6C6';
+// 	$templates_color =	'#C6C6C6';
+// 	$carriers_color =	'#C6C6C6';
+// 	$settings_color = 	'#C6C6C6';
+// 	$label_color =		'#C6C6C6';
+// 	$colors_color =		'#C6C6C6';
+// 	$status_color = 	'#C6C6C6';
+// 	$moh_color = 		'#C6C6C6';
+// 	$vm_color = 		'#C6C6C6';
+// 	$tts_color = 		'#C6C6C6';
+// 	$cc_color = 		'#C6C6C6';
+// 	$cts_color = 		'#C6C6C6';
+// 	$sc_color = 		'#C6C6C6';
+// 	$sg_color = 		'#C6C6C6';
+// 	$ar_color = 		'#C6C6C6';
+// 	$il_color = 		'#C6C6C6';
+// 	$cg_color = 		'#C6C6C6';
+// 	$vmmg_color = 		'#C6C6C6';
+// $subcamp_color =	'#C6C6C6';
 
-$Msubhead_color =	'#E6E6E6';
-$Mselected_color =	'#C6C6C6';
-$Mhead_color =		'#A3C3D6';
-$Mmain_bgcolor =	'#015B91';
+// $Msubhead_color =	'#E6E6E6';
+// $Mselected_color =	'#C6C6C6';
+// $Mhead_color =		'#A3C3D6';
+// $Mmain_bgcolor =	'#015B91';
+
+$users_color        = '#E8F1FF'; // Soft Blue
+$campaigns_color    = '#E8F5E9'; // Soft Green
+$lists_color        = '#FFF3E0'; // Soft Orange
+$ingroups_color     = '#F3E8FF'; // Soft Purple
+$remoteagent_color  = '#E6FFFA'; // Soft Teal
+$usergroups_color   = '#E0F7FA'; // Cyan
+$scripts_color      = '#FFF8E1'; // Soft Amber
+$filters_color      = '#F1F5F9'; // Slate
+$admin_color        = '#FCE7F3'; // Soft Pink
+$qc_color           = '#FEE2E2'; // Soft Red
+$reports_color      = '#ECFDF5'; // Emerald
+$times_color        = '#EEF2FF'; // Indigo
+$shifts_color       = '#F0FDFA'; // Teal
+$phones_color       = '#EFF6FF'; // Blue
+$conference_color   = '#F5F3FF'; // Violet
+$server_color       = '#F1F5F9'; // Slate
+$templates_color    = '#FFFBEB'; // Yellow
+$carriers_color     = '#ECFEFF'; // Cyan
+$settings_color     = '#F3F4F6'; // Gray
+$label_color        = '#FDF2F8'; // Pink
+$status_color       = '#F0FDF4'; // Green
+$moh_color          = '#F5F3FF'; // Purple
+$vm_color           = '#EFF6FF'; // Blue
+$tts_color          = '#FFF7ED'; // Orange
+$cc_color           = '#ECFDF5'; // Green
+$cts_color          = '#F0FDFA'; // Teal
+
+$subcamp_color      = '#FEF3C7'; // Warm Amber
+
+
+$users_font         = 'BLACK';
+$campaigns_font     = 'BLACK';
+$lists_font         = 'BLACK';
+$ingroups_font      = 'BLACK';
+$remoteagent_font   = 'BLACK';
+$usergroups_font    = 'BLACK';
+$scripts_font       = 'BLACK';
+$filters_font       = 'BLACK';
+$admin_font         = 'BLACK';
+$qc_font            = 'BLACK';
+$reports_font       = 'BLACK';
+$times_font         = 'BLACK';
+$phones_font        = 'BLACK';
+$conference_font    = 'BLACK';
+$server_font        = 'BLACK';
+$settings_font      = 'BLACK';
+$label_font         = 'BLACK';
+$status_font        = 'BLACK';
+$moh_font           = 'BLACK';
+$vm_font            = 'BLACK';
+$tts_font           = 'BLACK';
+$cc_font            = 'BLACK';
+$cts_font           = 'BLACK';
+$subcamp_font       = 'BLACK';
+
+
+/*
+ * Neutral / single-color section headings
+ * Use this section if you want a cleaner monochrome UI.
+ */
+$users_color        = '#F1F5F9';
+$campaigns_color    = '#F1F5F9';
+$lists_color        = '#F1F5F9';
+$ingroups_color     = '#F1F5F9';
+$remoteagent_color  = '#F1F5F9';
+$usergroups_color   = '#F1F5F9';
+$scripts_color      = '#F1F5F9';
+$filters_color      = '#F1F5F9';
+$admin_color        = '#F1F5F9';
+$qc_color           = '#F1F5F9';
+$reports_color      = '#F1F5F9';
+
+$times_color        = '#E2E8F0';
+$shifts_color       = '#E2E8F0';
+$phones_color       = '#E2E8F0';
+$conference_color   = '#E2E8F0';
+$server_color       = '#E2E8F0';
+$templates_color    = '#E2E8F0';
+$carriers_color     = '#E2E8F0';
+$settings_color     = '#E2E8F0';
+$label_color        = '#E2E8F0';
+$colors_color       = '#E2E8F0';
+$status_color       = '#E2E8F0';
+$moh_color          = '#E2E8F0';
+$vm_color            = '#E2E8F0';
+$tts_color           = '#E2E8F0';
+$cc_color            = '#E2E8F0';
+$cts_color           = '#E2E8F0';
+$sc_color            = '#E2E8F0';
+$sg_color            = '#E2E8F0';
+$ar_color            = '#E2E8F0';
+$il_color            = '#E2E8F0';
+$cg_color            = '#E2E8F0';
+$vmmg_color          = '#E2E8F0';
+
+$subcamp_color       = '#E2E8F0';
+
+
+/*
+ * Main application colors
+ */
+$Msubhead_color      = '#F1F5F9';
+$Mselected_color     = '#DBEAFE';
+$Mhead_color         = '#BFDBFE';
+$Mmain_bgcolor       = '#0F4C81';
 
 ###
 
@@ -8506,55 +8612,106 @@ if ($ADD=="1")
 	{
 	if ($LOGmodify_users==1)
 		{
-		##### BEGIN ID override optional section, if enabled it increments user by 1 ignoring entered value #####
-		$stmt = "SELECT count(*) FROM vicidial_override_ids where id_table='vicidial_users' and active='1';";
-		$rslt=mysql_to_mysqli($stmt, $link);
-		$voi_ct = mysqli_num_rows($rslt);
-		if ($voi_ct > 0)
-			{
-			$row=mysqli_fetch_row($rslt);
-			$voi_count = "$row[0]";
+			##### BEGIN ID override optional section, if enabled it increments user by 1 ignoring entered value #####
+			$stmt = "SELECT count(*) FROM vicidial_override_ids where id_table='vicidial_users' and active='1';";
+			$rslt=mysql_to_mysqli($stmt, $link);
+			$voi_ct = mysqli_num_rows($rslt);
+			if ($voi_ct > 0) {
+				$row=mysqli_fetch_row($rslt);
+				$voi_count = "$row[0]";
 			}
-		##### END ID override optional section #####
+			##### END ID override optional section #####
 
-		echo "<TABLE><TR><TD>\n";
-		echo "<img src=\"images/icon_black_users.png\" alt=\"Users\" width=42 height=42> <FONT FACE=\"ARIAL,HELVETICA\" COLOR=BLACK SIZE=2>";
+		?>
+		<div class="col-md-6">
+            <div class="card card-secondary card-outline mb-4">
+				<div class="card-header">
+					<div class="card-title">
+						<img src="images/icon_black_users.png" alt="Users" width=42 height=42>	
+						<?php echo _QXZ("ADD A NEW USER"); ?>	
+					</div>
+				</div>
+				<form action=<?php echo $PHP_SELF ?> method="POST" name="userform" id="userform">
+					<input type="hidden" name="ADD" value="2">
+					<input type="hidden" name="DB" value="<?php echo $DB ?>">
+					<input type="hidden" name="user_toggle" id="user_toggle" value="0">
+                  	<div class="card-body">
+						<div class="form-floating mb-3">
+							<?php if ($voi_count > 0) { ?>
+								<?php echo _QXZ("Auto-Generated") ?>
+								<input type="hidden" name="user" id="user" value="99999"><?php echo $NWB?>#users-user<?php echo $NWE?>
+							<?php } else { ?>
+							<input type="text" class="form-control" name="user" id="user" placeholder="name@example.com">
+							<input  type="button" class="btn btn-secondary" name="auto_user" value="<?php echo _QXZ("AUTO-GENERATE")?>" onClick="user_auto()"> <?php echo $NWB?>#users-user<?php echo $NWE?>
+							<?php } ?>
+							
+							<label for="user"><?php echo _QXZ("User Number") ?></label>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="password" class="form-control" id="reg_pass" name="pass" placeholder="<?php echo _QXZ("Password")?>" onkeyup="return pwdChanged('reg_pass','reg_pass_img','pass_length','<?php echo $SSrequire_password_length ?>');">
+							<label for="reg_pass"><?php echo _QXZ("Password")?></label>
+							<?php echo $NWB?>#users-pass<?php echo $NWE ?>
+							<p class="text-secondary small">
+								<?php echo _QXZ("Strength") ?>: 
+								<IMG id=reg_pass_img src='images/pixel.gif' style="vertical-align:middle;" onLoad="return pwdChanged('reg_pass','reg_pass_img','pass_length','<?php echo $SSrequire_password_length;?>')"> <?php echo _QXZ("Length")?>: <span id="pass_length" name="pass_length">0</span>
+							</p>
+						</div>
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="full_name" name="full_name" placeholder="<?php echo _QXZ("Full Name")?>" >
+							<label for="full_name"><?php echo _QXZ("Full Name")?></label>
+							<?php echo $NWB?>#users-full_name<?php echo $NWE ?>
+						</div>
 
-		echo "<br>"._QXZ("ADD A NEW USER")."<form action=$PHP_SELF method=POST name=userform id=userform>\n";
-		echo "<input type=hidden name=ADD value=2>\n";
-		echo "<input type=hidden name=DB value=$DB>\n";
-		echo "<input type=hidden name=user_toggle id=user_toggle value=0>\n";
-		echo "<center><TABLE width=$section_width cellspacing=3>\n";
-		if ($voi_count > 0)
-			{
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("User Number").": </td><td align=left>"._QXZ("Auto-Generated")." <input type=hidden name=user id=user value=\"99999\">$NWB#users-user$NWE</td></tr>\n";
-			}
-		else
-			{
-			echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("User Number").": </td><td align=left><input type=text name=user id=user size=20 maxlength=20> <input style='background-color:#$SSbutton_color' type=button name=auto_user value=\""._QXZ("AUTO-GENERATE")."\" onClick=\"user_auto()\"> $NWB#users-user$NWE</td></tr>\n";
-			}
 
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Password").": </td><td align=left style=\"display:table-cell; vertical-align:middle;\" NOWRAP><input type=text id=reg_pass name=pass size=50 maxlength=100 onkeyup=\"return pwdChanged('reg_pass','reg_pass_img','pass_length','$SSrequire_password_length');\">$NWB#users-pass$NWE &nbsp; &nbsp; <font size=1> "._QXZ("Strength").":</font> <IMG id=reg_pass_img src='images/pixel.gif' style=\"vertical-align:middle;\" onLoad=\"return pwdChanged('reg_pass','reg_pass_img','pass_length','$SSrequire_password_length');\"> &nbsp; <font size=1>"._QXZ("Length").": <span id=pass_length name=pass_length>0</span></font></td></tr>\n";
+						<div class="form-floating mb-3">
+							<select class="form-select" id="select-default" name="user_level">
+								<?php
+								$h = 1;
+								$count_user_level=$LOGuser_level;
+								if ( ($LOGmodify_same_user_level < 1) and ($LOGuser_level > 8) ) {
+									$count_user_level = ($LOGuser_level - 1);
+								}
+								while ($h<=$count_user_level) {
+									echo "<option>$h</option>";
+									$h++;
+								}
+								?>
+							</select>
+                      		<label class="form-label" for="select-default"><?php echo _QXZ("User Level")?></label>
+							<?php echo $NWB?>#users-user_level<?php echo $NWE ?>
+							
+                    	</div>
 
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Full Name").": </td><td align=left><input type=text name=full_name size=20 maxlength=100>$NWB#users-full_name$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("User Level").": </td><td align=left><select size=1 name=user_level>";
-		$h=1;
-		$count_user_level=$LOGuser_level;
-		if ( ($LOGmodify_same_user_level < 1) and ($LOGuser_level > 8) )
-			{$count_user_level=($LOGuser_level - 1);}
-		while ($h<=$count_user_level)
-			{
-			echo "<option>$h</option>";
-			$h++;
-			}
-		echo "</select>$NWB#users-user_level$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("User Group").": </td><td align=left><select size=1 name=user_group>\n";
-		echo "$UUgroups_list";
-		echo "</select>$NWB#users-user_group$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Phone Login").": </td><td align=left><input type=text name=phone_login size=20 maxlength=20>$NWB#users-phone_login$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=right>"._QXZ("Phone Pass").": </td><td align=left><input type=text name=phone_pass size=20 maxlength=20>$NWB#users-phone_pass$NWE</td></tr>\n";
-		echo "<tr bgcolor=#$SSstd_row4_background><td align=center colspan=2><input style='background-color:#$SSbutton_color' type=button name=SUBMIT value='"._QXZ("SUBMIT")."' onClick=\"user_submit()\"></td></tr>\n";
-		echo "</TABLE></center>\n";
+						<div class="form-floating mb-3">
+							<select class="form-select" id="select-user_group" name="user_group">
+								<?php
+								echo $UUgroups_list;
+								?>
+							</select>
+                      		<label class="form-label" for="select-user_group"><?php echo _QXZ("User Group")?></label>
+							<?php echo $NWB?>#users-user_group<?php echo $NWE ?>
+							
+                    	</div>
+
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="phone_login" name="phone_login" placeholder="<?php echo _QXZ("Phone Login")?>" >
+							<label for="phone_login"><?php echo _QXZ("Phone Login")?></label>
+							<?php echo $NWB?>#users-phone_login<?php echo $NWE ?>
+						</div>
+
+						<div class="form-floating mb-3">
+							<input type="text" class="form-control" id="phone_pass" name="phone_pass" placeholder="<?php echo _QXZ("Phone Pass")?>" >
+							<label for="phone_pass"><?php echo _QXZ("Phone Pass")?></label>
+							<?php echo $NWB?>#users-phone_pass<?php echo $NWE ?>
+						</div>
+                  	</div>
+					<div class="card-footer">
+                      <button type="button" class="btn btn-primary" value="<?php echo _QXZ("SUBMIT");?>" onClick="user_submit()"><?php echo _QXZ("SUBMIT");?></button>
+                    </div>
+				</form>	
+            </div>
+        </div>
+		<?php
 		}
 	else
 		{
