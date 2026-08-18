@@ -1975,7 +1975,7 @@ if ($subcamp_font_size < 4) {$subcamp_font_size='11';}
 	<!-- BEGIN SIDEBAR NAVIGATION -->
 	<TR>
 		<TD VALIGN=TOP WIDTH=170 BGCOLOR=#<?php echo "$SSmenu_background" ?> ALIGN=CENTER VALIGN=MIDDLE>
-			<A HREF="<?php echo $ADMIN ?>">
+			<A HREF="<?php echo $ADMIN ?>" class="sidebar-brand img-thumbnail">
 				<IMG SRC="<?php echo $selected_logo; ?>" WIDTH=170 HEIGHT=45 BORDER=0 ALT="System logo">
 			</A>
 			<B><FONT FACE="ARIAL,HELVETICA" COLOR=white><?php echo _QXZ("ADMINISTRATION"); ?></FONT></B><BR>
@@ -2757,7 +2757,22 @@ if ($subcamp_font_size < 4) {$subcamp_font_size='11';}
 </span>
 
 <TABLE BGCOLOR=#<?php echo $SSframe_background ?> cellpadding=2 cellspacing=0 WIDTH=<?php echo $page_width ?> HEIGHT=15>
-<TR BGCOLOR=#<?php echo "$SSmenu_background" ?>><TD ALIGN=LEFT BGCOLOR=#<?php echo "$SSmenu_background" ?>><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=2><B><a href="<?php echo $admin_home_url_LU ?>" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1><?php echo _QXZ("HOME"); ?></a> | <A HREF="../agc/timeclock.php?referrer=admin" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1> <?php echo _QXZ("Timeclock"); ?></A> | <a href="manager_chat_interface.php" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1> <?php echo _QXZ("Chat"); ?></a> | <a href="<?php echo $ADMIN ?>?force_logout=1" STYLE="text-decoration:none;"><FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1><?php echo _QXZ("Logout"); ?></a> <FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=1>(<?php echo $PHP_AUTH_USER ?>)</FONT>
+<TR BGCOLOR=#<?php echo "$SSmenu_background" ?>>
+	<TD ALIGN=LEFT BGCOLOR=#<?php echo "$SSmenu_background" ?>>
+		<FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=2><B>
+			<a href="<?php echo $admin_home_url_LU ?>" STYLE="text-decoration:none;">
+				<FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=2><?php echo _QXZ("HOME"); ?>
+			</a> | 
+			<A HREF="../agc/timeclock.php?referrer=admin" STYLE="text-decoration:none;">
+				<FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=2> <?php echo _QXZ("Timeclock"); ?>
+			</A> | 
+			<a href="manager_chat_interface.php" STYLE="text-decoration:none;">
+				<FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=2> <?php echo _QXZ("Chat"); ?>
+			</a> | 
+			<a href="<?php echo $ADMIN ?>?force_logout=1" STYLE="text-decoration:none;">
+				<FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=3><?php echo _QXZ("Logout"); ?>
+			</a> 
+				<FONT FACE="ARIAL,HELVETICA" COLOR=WHITE SIZE=3>(<?php echo $PHP_AUTH_USER ?>)</FONT>
 
 <?php
 if ($SSenable_languages == '1')
