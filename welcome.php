@@ -144,7 +144,7 @@ if ( ($SSweb_logo!='default_new') and ($SSweb_logo!='default_old') )
             </a>
 			<?php if ($hide_timeclock_link < 1) { ?> 
 				<a href="../agc/timeclock.php?referrer=welcome" class="btn btn-secondary">
-					<?php echo _QXZ("Timeclock"); ?>
+					<?php echo _QXZ("Agent Time Tracking"); ?>
 				</a>
 			
 			<?php } ?>
